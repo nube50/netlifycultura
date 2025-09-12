@@ -1,4 +1,10 @@
 [[redirects]]
+  from = "/culturavpn"
+  to = "https://thomas.culturavpn.site/culturavpn"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/culturavpn/*"
   to = "https://thomas.culturavpn.site/culturavpn/:splat"
   status = 200
