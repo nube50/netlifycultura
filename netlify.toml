@@ -1,7 +1,12 @@
-[build]
-  command = "echo No build step"
-  publish = "."
+# Reglas de proxy hacia tu backend V2Ray
+[[redirects]]
+  from = "/culturavpn/*"
+  to = "https://thomas.culruravpn.site/culturavpn/:splat"
+  status = 200
+  force = true
 
-[[edge_functions]]
-  function = "proxy"
-  path = "/ray"
+# Redirección raíz (opcional, para que no de 404 al abrir el sitio sin ruta)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
