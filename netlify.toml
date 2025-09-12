@@ -1,11 +1,9 @@
-# Reglas de proxy hacia tu backend V2Ray
 [[redirects]]
   from = "/culturavpn/*"
-  to = "https://thomas.culruravpn.site/culturavpn/:splat"
+  to = "https://thomas.culturavpn.site/culturavpn/:splat"
   status = 200
   force = true
 
-# Redirección raíz (opcional, para que no de 404 al abrir el sitio sin ruta)
 [[redirects]]
   from = "/*"
   to = "/index.html"
