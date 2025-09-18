@@ -9,5 +9,5 @@ export default async (req, context) => {
 };
 
 export const config = {
-  path: "/" // la raíz si solo usas el túnel aquí
+  path: "/ws" // la raíz si solo usas el túnel aquí
 };
