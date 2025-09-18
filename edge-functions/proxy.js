@@ -1,0 +1,16 @@
+export default async (req, context) => {
+  const upgrade = req.headers.get("upgrade") || "";
+
+  if (upgrade.toLowerCase() !== "websocket") {
+    return new Response("Upgrade Required", { status: 426 });
+  }
+
+  // URL de tu backend real con V2Ray
+  const backendUrl = "wss://thomas.culruravpn.site/culturavpn";
+
+  return context.rewrite(backendUrl);
+};
+
+export const config = {
+  path: "/ray"
+};
