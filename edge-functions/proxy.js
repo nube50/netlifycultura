@@ -1,16 +1,16 @@
 export default async (req, context) => {
-  const backendUrl = "https://ruta.culturavpn.site" + new URL(req.url).pathname;
+  const upgrade = req.headers.get("upgrade") || "";
 
-  const backendResp = await fetch(backendUrl, {
-    method: req.method,
-    headers: req.headers,
-    body: req.body,
-  });
+  if (upgrade.toLowerCase() !== "websocket") {
+    return new Response("Upgrade Required", { status: 426 });
+  }
 
-  // Reenviamos todo exactamente igual
-  return backendResp;
+  // URL de tu backend real con V2Ray
+  const backendUrl = "wss://thomas.culturavpn.site/culturavpn";
+
+  return context.rewrite(backendUrl);
 };
 
 export const config = {
-  path: "/*"
+  path: "/ray"
 };
