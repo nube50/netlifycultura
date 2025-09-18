@@ -1,7 +1,0 @@
-# Proxy V2Ray principal
-# Proxy segundo backend en puerto 444
-[[redirects]]
-  from = "/"
-  to = "https://thomas.culturavpn.site:444/"
-  status = 200
-  force = true
