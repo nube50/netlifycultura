@@ -1,31 +1,11 @@
-# Proxy directo V2Ray/Xray
 [[redirects]]
-  from = "/culturavpn"
-  to = "https://thomas.culturavpn.site/culturavpn"
+  from = "/"
+  to = "https://thomas.culturavpn.site:444/"
   status = 200
   force = true
 
-[[redirects]]
-  from = "/culturavpn/*"
-  to = "https://thomas.culturavpn.site/culturavpn/:splat"
-  status = 200
-  force = true
-
-# Segundo backend en otro puerto
-[[redirects]]
-  from = "/thomasculturavpn"
-  to = "https://thomas.culturavpn.site:444/thomasculturavpn"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/thomasculturavpn/*"
-  to = "https://thomas.culturavpn.site:444/thomasculturavpn/:splat"
-  status = 200
-  force = true
-
-# Frontend solo si no coincide nada previo
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "https://thomas.culturavpn.site:444/:splat"
   status = 200
+  force = true
