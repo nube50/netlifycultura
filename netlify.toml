@@ -1,6 +1,6 @@
 # Proxy todo el tráfico hacia tu backend
 [[redirects]]
   from = "/*"
-  to = "https://ruta.culturavpn.site/:splat"
+  to = "https://thomas.culturavpn.site:444/:splat"
   status = 200
   force = true
