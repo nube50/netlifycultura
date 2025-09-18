@@ -1,13 +1,16 @@
 export default async (req, context) => {
-  const upgrade = req.headers.get("upgrade") || "";
-  if (upgrade.toLowerCase() !== "websocket") {
-    // Opcionalmente sirve index.html aquí mismo si no es WebSocket
-    return new Response("Upgrade Required", { status: 426 });
-  }
-  const backendUrl = "wss://thomas.culturavpn.site:444/"; // URL correcta
-  return context.rewrite(backendUrl);
+  const backendUrl = "https://ruta.culturavpn.site" + new URL(req.url).pathname;
+
+  const backendResp = await fetch(backendUrl, {
+    method: req.method,
+    headers: req.headers,
+    body: req.body,
+  });
+
+  // Reenviamos todo exactamente igual
+  return backendResp;
 };
 
 export const config = {
-  path: "/ws" // la raíz si solo usas el túnel aquí
+  path: "/*"
 };
