@@ -12,8 +12,3 @@
   status = 200
   force = true
 
-# Frontend estático
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
