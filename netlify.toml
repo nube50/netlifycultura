@@ -26,6 +26,6 @@
 
 # Frontend estático
 [[redirects]]
-  from = "/h*"
+  from = "/*"
   to = "/index.html"
   status = 200
