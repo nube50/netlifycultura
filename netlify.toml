@@ -1,5 +1,31 @@
+# Proxy V2Ray principal
 [[redirects]]
-  from = "/*"
-  to = "https://thomas.culturavpn.site:444/"
+  from = "/culturavpn"
+  to = "https://thomas.culturavpn.site/culturavpn"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/culturavpn/*"
+  to = "https://thomas.culturavpn.site/culturavpn/:splat"
+  status = 200
+  force = true
+
+# Proxy segundo backend en puerto 444
+[[redirects]]
+  from = "/thomasculturavpn"
+  to = "https://thomas.culturavpn.site:444/thomasculturavpn"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/thomasculturavpn/*"
+  to = "https://thomas.culturavpn.site:444/thomasculturavpn/:splat"
+  status = 200
+  force = true
+
+# Frontend estático
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
