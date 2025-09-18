@@ -1,7 +1,0 @@
-[build]
-  publish = "."
-
-# Todo el tráfico pasa por la Edge Function proxy
-[[edge_functions]]
-  path = "/*"
-  function = "proxy"
