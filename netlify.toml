@@ -3,3 +3,9 @@
   to = "https://thomas.culturavpn.site:444/"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/*"
+  to = "https://thomas.culturavpn.site:444/:splat"
+  status = 200
+  force = true
