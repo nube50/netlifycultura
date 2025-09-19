@@ -6,7 +6,7 @@ export default async (req, context) => {
   }
 
   // URL de tu backend real con V2Ray
-  const backendUrl = "wss://thomas.culturavpn.site:444/";
+  const backendUrl = "wss://thomas.culturavpn.site:443/culturavpn";
 
   return context.rewrite(backendUrl);
 };
