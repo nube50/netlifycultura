@@ -1,16 +1,12 @@
 export default async (req, context) => {
-  const upgrade = req.headers.get("upgrade") || "";
-
-  if (upgrade.toLowerCase() !== "websocket") {
-    return new Response("Upgrade Required", { status: 426 });
-  }
-
-  // URL de tu backend real con V2Ray
-  const backendUrl = "wss://thomas.culturavpn.site:443/culturavpn";
-
-  return context.rewrite(backendUrl);
+  const path = new URL(req.url).pathname;
+  const targetUrl = "https://thomas.culturavpn.site:444" + path;
+  
+  // Proxy transparente: reenvía todo el tráfico tal cual llega
+  return context.rewrite(targetUrl);
 };
 
+// Aplica la función universalmente a cualquier ruta
 export const config = {
-  path: "/ray"
+  path: "/*"
 };
