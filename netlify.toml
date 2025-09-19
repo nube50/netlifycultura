@@ -1,5 +1,5 @@
 [[redirects]]
   from = "/thomas/*"
-  to = "https://thomas.culturavpn.site:444/api/:splat"
+  to = "https://thomas.culturavpn.site:444/:splat"
   status = 200
   force = true
